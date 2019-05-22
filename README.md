@@ -1,4 +1,7 @@
-phase-dev
-=========
+A blog made with symfony 3
+==========================
 
-A Symfony project created on October 25, 2016, 2:05 pm.
+An other project created with symfony 3. It is an application for a it shop.
+
+For more precision, it was my first project with the symfony framework and I did
+that in my studies.
