@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block title %}Catalogue{% endblock %}
+{% block body %}
+
+    <h1 style="text-align:center; margin: 20px 0;">Notre catalogue</h1>
+    <div class="container-fluid" style="margin: 100px; ">
+        <div class="row">
+    {% if fetch.promos == null %}
+            <div class="jumbotron col-md-3 catalogue-prix">
+                <h3>{{ fetch.brand }} - {{ fetch.title }}</h3>
+                <p><img src="{{ vich_uploader_asset(fetch,'imageFile') }}" alt="{{ fetch.title }}"  style="border: 1px solid #737373; border-radius: 5px; width: 100%; height: 150px; text-align: center; background: #fff; overflow: scroll;"/></p>
+                <p>OS : {{ fetch.os }}</p>
+                <p>Ecran : {{ fetch.screenSize }} ''</p>
+                <p>Processeur : {{ fetch.processor }} GB</p>
+                <p>Ram : {{ fetch.RAM }} GB</p>
+                <p>Rom : {{ fetch.ROM }} GB</p>
+                <p>Prix : {{ fetch.price }} €</p>
+            </div>
+    {% else %}
+            <div class="jumbotron col-md-3 catalogue-promo">
+                <h3>{{ fetch.brand }} - {{ fetch.title }}</h3>
+                <p><img src="{{ vich_uploader_asset(fetch,'imageFile') }}" alt="{{ fetch.title }}"  style="border: 1px solid #737373; border-radius: 5px; width: 100%; height: 150px; text-align: center; background: #fff;"/></p>
+                <p>OS : {{ fetch.os }}</p>
+                <p>Ecran : {{ fetch.screenSize }} ''</p>
+                <p>Processeur : {{ fetch.processor }} GB</p>
+                <p>Ram : {{ fetch.RAM }} GB</p>
+                <p>Rom : {{ fetch.ROM }} GB</p>
+                <p><s>Prix : {{ fetch.price }} €</s></p>
+                <p>Promotion : {{ fetch.promos }} €</p>
+            </div>
+    {% endif %}
+            <div class="jumbotron col-md-6" style="margin: 25px 7.5%">
+                <h3>{{ fetch.brand }} - {{ fetch.title }}</h3>
+                <p>{{ fetch.text }}</p>
+            </div>
+        </div>
+    </div>
+
+<footer class="container-fluid bg-primary" id="footer">
+    <div class="row">
+        <div class="col-md-4">
+            <p>VOIP</p>
+            <p>Mainenance Informatique</p>
+            <p>Ordinateur</p>
+        </div>
+        <div class="col-md-4">
+            <p>VOIP Shop</p>
+            <p>Place du Marché</p>
+            <p>1340 Ottignies</p>
+            <p>info@voip-shop.be</p>
+        </div>
+        <div class="col-md-3">
+            <p>VOIP Shop</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+        </div>
+    </footer>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact{% endblock %}
+{% block body %}
+
+    <div class="container-fluid intro" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-md-9 col-md-push-1">
+            <h3>Nous contacter</h3>
+            <p>Si vous souhaitez avoir de plus amples informations quand à nos produits, ou une réclammation à faire ou que vous souhaitez vous inscrire pour notre news letter, nous vous invitons à nous contacter via le formulaire de contact.</p>
+        </div>
+    </div>
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-md-3 col-md-push-1">
+                <img src="{{ asset('img/Contact-Img.jpg') }}" id="contact-img">
+         </div>
+         <div class="col-md-3 col-md-push-3" id="contact-form">
+                {{ form(form) }}
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-md-push-2" id="address">
+                 <p><b>VOIP Shop</b></p>
+                 <p>Place du Marché</p>
+                 <p>1340 Ottignies</p>
+            </div>
+            <div class="col-md-5 col-md-push-2" id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158.0544619178986!2d4.570291205335108!3d50.66664837964442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3d5fb9faf7a23%3A0x9b975b4783d2f55!2sOTTIGNIES+Place+du+March%C3%A9!5e0!3m2!1sfr!2sbe!4v1478375875927" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<footer class="container-fluid bg-primary" id="footer">
+    <div class="row">
+        <div class="col-md-4">
+            <p>VOIP</p>
+            <p>Mainenance Informatique</p>
+            <p>Ordinateur</p>
+        </div>
+        <div class="col-md-4">
+            <p>VOIP Shop</p>
+            <p>Place du Marché</p>
+            <p>1340 Ottignies</p>
+            <p>info@voip-shop.be</p>
+        </div>
+        <div class="col-md-3">
+            <p>VOIP Shop</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}

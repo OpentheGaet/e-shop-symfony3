@@ -1,0 +1,33 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9">
+            <h3 class="title-admin">Ajouter des nouvelles images</h3>
+            <div class="table-responsive table-bordered">
+                <table class="table border">
+                    <tr>
+                        <th>titres</th>
+                        <th>images</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
+                    </tr>
+                    {% for p in fetch %}
+                        <tr>
+                            <td>{{ p.title }}</td>
+                            <td>{{ p.imageName }}</td>
+                            <td><a href="{{ path('updateSlider',{id:p.id}) }}"><img src="{{ asset('img/update.png') }}" alt="" class="update" /></a></td>
+                            <td><a href="{{ path('delSlider',{id:p.id}) }}"><img src="{{ asset('img/delete.png') }}" alt="" class="delete" /></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div>
+                <p>Attention, seules les quatre premières images seront prises en considération.</p>
+                <a href="{{ path('newSlider') }}"><input type="button" class="btn btn-primary back" value="ajouter une image"></a>
+                <a href="{{ path('toDoList') }}"><input type="button" class="btn btn-primary back" value="retour"></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

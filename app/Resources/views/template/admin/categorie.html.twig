@@ -1,0 +1,30 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9">
+            <h3 class="title-admin">Ajouter des nouvelles categories</h3>
+            <div class="table-responsive table-bordered">
+                <table class="table border">
+                    <tr>
+                        <th>categories</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
+                    </tr>
+                    {% for p in fetch %}
+                        <tr>
+                            <td>{{ p.title }}</td>
+                            <td><a href="{{ path('updateCategorie',{id:p.id}) }}"><img src="{{ asset('img/update.png') }}" alt="" class="update"/></a></td>
+                            <td><a href="{{ path('delCategorie',{id:p.id}) }}"><img src="{{ asset('img/delete.png') }}" alt="" class="delete" /></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div>
+                <a href="{{ path('newCategorie') }}"><input type="button" class="btn btn-primary" value="ajouter une categorie"></a>
+                <a href="{{ path('toDoList') }}"><input type="button" class="btn btn-primary back" value="retour"></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

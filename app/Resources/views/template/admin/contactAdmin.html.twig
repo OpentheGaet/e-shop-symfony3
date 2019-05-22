@@ -1,0 +1,35 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <h3 class="title-admin">Gérer les emails</h3>
+                <div class="table-responsive table-bordered">
+  		    <table class="table border">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
+                        <th>Téléphone</th>
+                        <th>Message</th>
+                        <th>date</th>
+                        <th>Suppression</th>
+                    </tr>
+                    {% for p in fetch %}
+                    <tr>
+                        <td>{{ p.name }}</td>
+                        <td>{{ p.firstname }}</td>
+                        <td>{{ p.mail }}</td>
+                        <td>{{ p.telephone }}</td>
+                        <td>{{ p.message }}</td>
+                        <td>{{ p.date|date('d-m-Y') }}</td>
+                        <td><a href="{{ path('delContact',{id:p.id}) }}"><img src="{{ asset('img/delete.png') }}" alt="" class="delete"  /></a></td>
+                    </tr>
+                    {% endfor %}
+            </table>
+            </div>
+                <a href="{{ path('toDoList') }}"><input type="button" class="btn btn-primary back" value="retour"></a>
+        </div>
+    </div>
+
+{% endblock %}

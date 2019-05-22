@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}Voip{% endblock %}
+{% block body %}
+    {% block div %}
+        <div id="background-VOIP">
+        </div>
+    {% endblock %}
+
+    <div class="container" id="start-about">
+        <div class="row">
+            <div class="start-about-text col-md-5">
+                <h3>VOIP</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto blanditiis consequuntur, dicta iusto minima modi optio, pariatur porro possimus quasi rem ullam ut vitae voluptas. Ad architecto atque corporis culpa debitis dolores eligendi eos exercitationem harum minima modi officiis possimus quia quibusdam recusandae, reiciendis repudiandae rerum sed suscipit vero.</p>
+            </div>
+            <div class="start-about-text col-md-5 col-md-push-2">
+                <h3>Notre produit phare</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto blanditiis consequuntur, dicta iusto minima modi optio, pariatur porro possimus quasi rem ullam ut vitae voluptas.</p>
+                <img src="{{ asset('img/telephone_voip.jpg') }}" alt="telephone_voip" id="telephone_voip">
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="container" id="start-about">
+        <div class="row">
+            <div class="start-about-text col-md-5">
+                <h3>Nos tarifs</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto blanditiis consequuntur, dicta iusto minima modi optio, pariatur porro possimus quasi rem ullam ut vitae voluptas. Ad architecto atque corporis culpa debitis dolores eligendi eos exercitationem harum minima modi officiis possimus quia quibusdam recusandae, reiciendis repudiandae rerum sed suscipit vero.</p>
+            </div>
+            <div class="start-about-text col-md-5 col-md-push-2">
+                <img src="{{ asset('img/mobiles-sub.jpg') }}" id="voip-tarif">
+            </div>
+        </div>
+    </div>
+
+
+<footer class="container-fluid bg-primary" id="footer">
+    <div class="row">
+        <div class="col-md-4">
+            <p>VOIP</p>
+            <p>Mainenance Informatique</p>
+            <p>Ordinateur</p>
+        </div>
+        <div class="col-md-4">
+            <p>VOIP Shop</p>
+            <p>Place du Marché</p>
+            <p>1340 Ottignies</p>
+            <p>info@voip-shop.be</p>
+        </div>
+        <div class="col-md-3">
+            <p>VOIP Shop</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}

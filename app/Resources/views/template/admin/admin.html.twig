@@ -1,0 +1,29 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+<div class="container-fluid">
+  <h1>Partie Admin</h1>
+     <div class="row">
+        <div class="col-md-10">
+           <a href="{{ path('slider') }}"><input type="button" class="btn btn-primary" value="Gérer le slider"></a>
+           <a href="{{ path('items') }}"><input type="button" class="btn btn-primary" value="Gérer le catalogue"></a>
+	       <a href="{{ path('categorie') }}"><input type="button" class="btn btn-primary" value="Gérer les categories"></a>
+           <a href="{{ path('contactAdmin') }}"><input type="button" class="btn btn-primary" value="Gérer les emails"></a>
+           <a href="{{ path('commentAdmin') }}"><input type="button" class="btn btn-primary" value="Gérer les commentaires"></a>
+           <a href="{{ path('newToDoList') }}"><input type="button" class="btn btn-primary" value="Ajouter un post-it"></a>
+        </div>
+{% for p in fetch %}
+       <div class="col-md-2" style="margin-top: 50px;">
+         <div id="green-note" style="background-color: greenyellow; border-radius:5px; padding:10px 20px; height: 250px; overflow: auto;">
+            <a href="{{ path('updateToDoList',{id:p.id}) }}"><img src="{{ asset('img/update.png') }}" alt="update" class="update" /></a>
+            <a href="{{ path('delToDoList',{id:p.id}) }}"><img src="{{ asset('img/delete.png') }}" alt="delete"  class="delete" /></a>&nbsp;
+             <span>| {{ p.date|date("d/m/Y") }}</span>
+             <h5>{{ p.title }}</h5>
+            <p>{{ p.content }}</p>
+        </div>
+     </div>
+{% endfor %}
+  </div>
+</div>
+      
+
+{% endblock %}

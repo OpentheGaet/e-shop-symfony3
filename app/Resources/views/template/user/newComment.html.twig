@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-push-3" style="margin-bottom: 110px;">
+                <h3 style="text-align:center;margin: 50px 0">Formulaire des commentaires</h3>
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+
+    <a href="{{ path('catalogue') }}"><input type="button" class="btn btn-primary" value="retour au catalogue" style="margin: 50px 16%; text-align:center"></a>
+
+<footer class="container-fluid bg-primary" id="footer">
+    <div class="row">
+        <div class="col-md-4">
+            <p>VOIP</p>
+            <p>Mainenance Informatique</p>
+            <p>Ordinateur</p>
+        </div>
+        <div class="col-md-4">
+            <p>VOIP Shop</p>
+            <p>Place du Marché</p>
+            <p>1340 Ottignies</p>
+            <p>info@voip-shop.be</p>
+        </div>
+        <div class="col-md-3">
+            <p>VOIP Shop</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}

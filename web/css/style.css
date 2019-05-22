@@ -1,0 +1,164 @@
+
+/*Design for the admin parts*/
+
+/*Design for the main look of admin's pages*/
+@media screen and (max-width: 768px){
+    #lateral-bar {
+        display: none;
+    }
+    .btn{
+        display: block;
+        margin-top: 20px;
+    }
+}
+#image-admin{
+    width: 30px;
+}
+#image-admin, #intro-admin{
+    margin: 10px 0;
+}
+#lateral-bar{
+    width: 15%;
+    height: 1500px;
+    border: 1px solid grey;
+    background-color: grey;
+    float:left;
+}
+.update{
+    width: 24px;
+    text-align: left;
+}
+.delete{
+    width: 30px;
+    text-align: left;
+}
+#lateral-menu{
+    margin: 100px -40px;
+}
+#lateral-menu a:hover
+{
+    color: #00b3ff;
+    text-decoration: none;
+}
+#lateral-menu a{
+    color: #fff;
+}
+.title-admin
+{
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+/*Design for the admin "articles" pages*/
+.border
+{
+    text-align: center;
+}
+.border table, .border th, .border td
+{ 
+    border:2px solid #404040;
+}
+.border th
+{
+    background-color: #0077e6;
+    color: #fff;
+    text-align: center;
+}
+.border tr:nth-child(odd){
+    background-color:  #e6e6e6
+;
+}
+
+/*Design for the user parts*/
+
+/*Universal design*/
+p{
+    text-align: justify;
+}
+#footer p{
+    text-align: center;
+}
+
+/*Design accueil*/
+#intro img {
+    width: 30px;
+}
+#background-home {
+    background-image: url("../img/141.jpg");
+    background-size: 100% 100%;
+    height: 450px;
+    margin-bottom: 50px;
+}
+hr{
+    border: 2px solid deepskyblue;
+    margin: 50px 0;
+}
+#footer{
+    text-align: center;
+}
+
+/*Design About*/
+#background-about{
+    background-image: url("../img/informatique.jpg");
+    background-size: 100% 100%;
+    height: 450px;
+    margin-bottom: 50px;
+}
+
+/*Design repairing*/
+#background-repairing{
+    background-image: url("../img/Maintenance.jpg");
+    background-size: 100% 100%;
+    height: 450px;
+    margin-bottom: 50px;
+}
+.img-repairing{
+    width: 80%;
+}
+
+/*Design catalogue*/
+.catalogue-prix{
+    margin: 25px 2.5%;
+    height: 650px;
+    background-color: rgb(51, 102, 255);
+    color: #fff;
+    overflow: auto;
+}
+.catalogue-promo{
+    margin: 25px 2.5%;
+    height: 650px;
+    background-color: #ff3333;
+    color: #fff;
+    overflow: auto;
+}
+
+/*Design VOIP*/
+#background-VOIP{
+    background-image: url("../img/voip.jpg");
+    background-size: 100% 100%;
+    height: 450px;
+    margin-bottom: 50px;
+}
+#telephone_voip{
+    width: 60%
+}
+#voip-tarif{
+    width: 100%;
+    margin-top: 25px;
+}
+/*Design Contact*/
+#contact-img{
+    width: 100%;
+    margin-top: 150px;
+}
+#contact-form{
+    margin-top: 50px;
+}
+#address{
+    margin-top: 150px;
+}
+#map{
+    margin:50px 0;
+}
+#map iframe{
+    width: 100%;
+}

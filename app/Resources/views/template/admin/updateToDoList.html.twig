@@ -1,0 +1,11 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <h3>Ajouter des nouveaux mémo</h3>
+                {{ form(form) }} <a href="{{ path('toDoList') }}"><input type="button" class="btn btn-primary back" value="retour"></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

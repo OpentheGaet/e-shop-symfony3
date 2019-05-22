@@ -1,0 +1,54 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-9">
+                <h3 class="title-admin">Gérer les produits</h3>
+                <div class="table-responsive table-bordered">
+  		    <table class="table border">
+                    <tr>
+                        <th>types</th>
+		            	<th>marque</th>
+                        <th>os</th>
+                        <th>écran</th>
+                        <th>processor</th>
+                        <th>RAM</th>
+                        <th>ROM</th>
+                        <th>Price</th>
+                        <th>Promotion</th>
+			            <th>images</th>
+                        <th>Contenu</th>
+                        <th>Catégories</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
+                    </tr>
+                    {% for p in fetch %}
+                    <tr>
+                        <td>{{ p.brand }}</td>
+                        <td>{{ p.title }}</td>
+                        <td>{{ p.os }}</td>
+                        <td>{{ p.screenSize }}</td>
+                        <td>{{ p.processor }}</td>
+                        <td>{{ p.RAM }}</td>
+		             	<td>{{ p.ROM }}</td>
+                        <td>{{ p.price }}</td>
+                        <td>{{ p.promos }}</td>
+                        <td>{{ p.imageName }}</td>
+                        <td>{{ p.text| striptags | slice(0, 20) }}</td>
+                        <td>{{ p.getCategorie().title }}</td>
+                        <td><a href="{{ path('updateItems',{id:p.id}) }}"><img src="{{ asset('img/update.png') }}" alt="" class="update"/></a></td>
+                        <td><a href="{{ path('delItems',{id:p.id}) }}"><img src="{{ asset('img/delete.png') }}" alt="" class="delete"  /></a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+                <div>
+                    <a href="{{ path('newItems') }}"><input type="button" class="btn btn-primary" value="ajouter un produit"></a>
+                    <a href="{{ path('newCategorie') }}"><input type="button" class="btn btn-primary" value="ajouter une categorie"></a>
+                    <a href="{{ path('toDoList') }}"><input type="button" class="btn btn-primary back" value="retour"></a>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block title %}Catalogue{% endblock %}
+{% block body %}
+
+    <h1 style="text-align:center; margin: 20px 0;">Notre catalogue</h1>
+
+    <a href="{{ path('catalogue') }}"><input type="button" class="btn btn-primary" value="retour au catalogue" style="margin: 20px 2.5% 0 2.5%; text-align:center"></a>
+
+    <div class="container-fluid" style="margin: 50px 0 0 0; ">
+        <div class="row">
+            {% for p in fetch %}
+                {% if p.promos == null %}
+                    <div class="jumbotron col-md-3 catalogue-prix">
+                        <h3>{{ p.brand }} - {{ p.title }}</h3>
+                        <p><img src="{{ vich_uploader_asset(p,'imageFile') }}" alt="{{ p.title }}"  style="border: 1px solid #737373; border-radius: 5px; width: 100%; height: 150px; text-align: center; background: #fff;"/></p>
+                        <p>OS : {{ p.os }}</p>
+                        <p>Ecran : {{ p.screenSize }} ''</p>
+                        <p>Processeur : {{ p.processor }} GB</p>
+                        <p>Ram : {{ p.RAM }} GB</p>
+                        <p>Rom : {{ p.ROM }} GB</p>
+                        <p>Prix : {{ p.price }} €</p>
+                        <a href="{{ path('product',{id:p.id}) }}"><input type="button" class="btn btn-warning" value="Voir le produit"></a>
+                    </div>
+                {% else %}
+                    <div class="jumbotron col-md-3 catalogue-promo">
+                        <h3>{{ p.brand }} - {{ p.title }}</h3>
+                        <p><img src="{{ vich_uploader_asset(p,'imageFile') }}" alt="{{ p.title }}"  style="border: 1px solid #737373; border-radius: 5px; width: 100%; height: 150px; text-align: center; background: #fff;"/></p>
+                        <p>OS : {{ p.os }}</p>
+                        <p>Ecran : {{ p.screenSize }} ''</p>
+                        <p>Processeur : {{ p.processor }} GB</p>
+                        <p>Ram : {{ p.RAM }} GB</p>
+                        <p>Rom : {{ p.ROM }} GB</p>
+                        <p><s>Prix : {{ p.price }} €</s></p>
+                        <p>Promotion : {{ p.promos }} €</p>
+                        <a href="{{ path('product',{id:p.id}) }}"><input type="button" class="btn btn-warning" value="Voir le produit"></a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <a href="{{ path('newComment') }}"><input type="button" class="btn btn-primary" value="Laisser un commentaire" style="margin: 50px 2.5%; text-align:center"></a>
+    <a href="{{ path('showComment') }}"><input type="button" class="btn btn-primary" value="Voir les commentaires" style="margin: 50px 0%; text-align:center"></a>
+
+<footer class="container-fluid bg-primary" id="footer">
+    <div class="row">
+        <div class="col-md-4">
+            <p>VOIP</p>
+            <p>Mainenance Informatique</p>
+            <p>Ordinateur</p>
+        </div>
+        <div class="col-md-4">
+            <p>VOIP Shop</p>
+            <p>Place du Marché</p>
+            <p>1340 Ottignies</p>
+            <p>info@voip-shop.be</p>
+        </div>
+        <div class="col-md-3">
+            <p>VOIP Shop</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}
